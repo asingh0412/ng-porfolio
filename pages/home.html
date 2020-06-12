@@ -3,14 +3,25 @@
   <h2>Date Picker Test <i class="far fa-calendar-alt"></i></h2>
   <div class="col-sm-6 d-inline-block">
 
-
     <div class="input-group date">
-      <input type="text" class="form-control">
+      <input type="text" class="form-control col-md-12" uib-datepicker-popup="{{format}}" ng-model="date" />
       <div class="input-group-addon">
-          <span class="glyphicon glyphicon-th">
-            <i class="far fa-calendar-alt"></i>
-          </span>
+        <span class="glyphicon glyphicon-th">
+        <i class="far fa-calendar-alt"></i>
+        </span>
       </div>
     </div>
+
+    <br>
+
+    <h2>Random Number test </h2>
+    <div class="input-group date">
+      <input type="text" id="rand1" placeholder="Min value" class="form-control col-md-12" ng-model="rand1" />
+      <input type="text" id="rand2" placeholder="Max value"class="form-control col-md-12" ng-model="rand2" />
+      <button type="button" id="button" class="btn btn-primary"
+        onclick="document.getElementById('demo').innerHTML = randomFunc(rand1, rand2)"
+        name="button">Submit</button>
+        <p id="demo"></p>
     </div>
+  </div>
 </div>

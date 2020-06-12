@@ -9,8 +9,27 @@
     z-index: 1030;
     margin-bottom: 0;
 } */
+
+* {
+  box-sizing: border-box;
+}
+
 @media (min-width:800px){
   .zip-container{
     padding-left: 80px;
   }
+}
+
+.contact_form_legend{
+  border-left:6px solid #4285f4;
+  background-color:lightgrey;
+  width:10%;
+  padding-right:100px border-radius:5px;
+  letter-spacing:1.5px;
+}
+
+h1{
+  letter-spacing:3px;
+  text-shadow: 2px 2px 2px #4285f4;
+  font-variant: small-caps;
 }

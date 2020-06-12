@@ -1,80 +1,120 @@
 <div class="container mt-4 mb-4">
-  <h1 class="text-center">Angular Project <i class="fas fa-feather-alt"></i></h1>
+  <h1 class="text-center" style="">Angular Project <i class="fas fa-feather-alt"></i></h1>
   <div class="">
-    <div class="checkbox ml-4">
+    <div class="checkbox ml-4 text-center">
         <label class="ml-2 mr-2">
-          <input type="checkbox" ng-model="disableForm" name="" value="">
+          <input type="checkbox" class="ml-2 " ng-model="disableForm" name="" value="">
           Disable Form
+        </label>
+        <label class="ml-2 mr-2">
+          <input type="checkbox" class="ml-2" ng-model="hideForm" name="" value="">
+          Hide Form
         </label>
     </div>
   </div>
+  <fieldset class="border p-2">
+    <legend class="w-auto contact_form_legend" style="letter-spacing:1.5px">
+      The form
+    </legend>
+      <form class="form-horizontal mt-4 ml-4 mb-4" ng-submit=""
+      ng-disabled="disableForm" ng-hide="hideForm">
 
-  <form class="form-horizontal mt-4 ml-4 mb-4" ng-disabled="disableForm" >
-    <div class="form-group row mt-2" >
-      <label class="control-label col-sm-2" for="fName" ng-disabled="disableForm">
-        First Name:
-      </label>
-      <input type="text" class="form-control col-md-6"
-        name="fName" value="" placeholder="Enter your First name" ng-disabled="disableForm">
-    </div>
-    <div class="form-group row mt-2">
-      <label class="control-label col-sm-2" for="lName" ng-disabled="disableForm">
-        Last Name:
-      </label>
-      <input type="text" class="form-control col-md-6"
-        name="lName" value="" placeholder="Enter your Last name" ng-disabled="disableForm">
-    </div>
+      <div class="form-group row mt-2" >
+        <label class="control-label col-sm-2" for="fName" ng-disabled="disableForm">
+          First Name:
+        </label>
+        <input type="text" class="form-control col-md-6" name="fName" ng-model="contact.fName" value=""
+          placeholder="Enter your First name" title="Enter First Name" ng-disabled="disableForm" autofocus>
+      </div>
+      <div class="form-group row mt-2">
+        <label class="control-label col-sm-2" for="lName" ng-disabled="disableForm">
+          Last Name:
+        </label>
+        <input type="text" class="form-control col-md-6" name="lName" ng-model="contact.lName" value=""
+          placeholder="Enter your Last name" title="Enter your Last name" ng-disabled="disableForm">
+      </div>
 
-    <div class="form-group row  mt-2">
-      <label class="control-label col-sm-2" for="email" ng-disabled="disableForm">
-        Email:
-      </label>
-      <input type="text" class="form-control col-md-6"
-        name="email" value="" placeholder="Enter your email" ng-disabled="disableForm">
-    </div>
+      <div class="form-group row  mt-2">
+        <label class="control-label col-sm-2" for="email" ng-disabled="disableForm">
+          Email:
+        </label>
+        <input type="text" class="form-control col-md-6" name="email" ng-model="contact.email" value=""
+          placeholder="Enter your email" ng-disabled="disableForm">
+      </div>
 
-    <div class="form-group row mt-2">
-      <label class="control-label col-sm-2" for="address" ng-disabled="disableForm">
-        Address
-      </label>
-      <input type="text" class="form-control col-md-6"
-        name="address" value="" placeholder="Enter your Address" ng-disabled="disableForm">
-    </div>
-    <div class="form-group row mt-2">
-      <label class="control-label col-sm-2" for="city" ng-disabled="disableForm">
-        City:
-      </label>
-      <input type="text" class="form-control col-md-6"
-        name="city" value="" placeholder="Enter your City" ng-disabled="disableForm">
-    </div>
+      <div class="form-group row mt-2">
+        <label class="control-label col-sm-2" for="address" ng-disabled="disableForm">
+          Address
+        </label>
+        <input type="text" class="form-control col-md-6" name="address" ng-model="contact.address" value=""
+          placeholder="Enter your Address" ng-disabled="disableForm">
+      </div>
+      <div class="form-group row mt-2">
+        <label class="control-label col-sm-2" for="city" ng-disabled="disableForm">
+          City:
+        </label>
+        <input type="text" class="form-control col-md-6" name="city" ng-model="contact.city" value=""
+          placeholder="Enter your City" ng-disabled="disableForm">
+      </div>
 
-    <!-- State -->
-    <div class="form-group row mt-2">
-      <label class="control-label col-sm-2" for="state" ng-disabled="disableForm">
-        State:
-      </label>
-      <select class="form-control col-md-2" ng-model="selectedState"
-        ng-options="state.name for state in states" ng-disabled="disableForm">
-      </select>
-      <label class="control-label col-sm-2 ml-6 pl-6 zip-container" for="Zip" ng-disabled="disableForm">
-        Zip:
-      </label>
-      <input type="text" class="form-control col-md-2"
-        name="Zip" value="" placeholder="Enter your Zip" ng-disabled="disableForm">
-    </div>
-    <pre>{{selectedState }}</pre>
+      <!-- State -->
+      <div class="form-group row mt-2">
+        <label class="control-label col-sm-2" for="state" ng-disabled="disableForm">
+          State:
+        </label>
+        <select class="form-control col-md-2" ng-model="selectedState"
+          ng-options="state.name for state in states" ng-disabled="disableForm">
+        </select>
+        <label class="control-label col-sm-2 ml-6 pl-6 zip-container" for="Zip" ng-disabled="disableForm">
+          Zip:
+        </label>
+        <input type="text" class="form-control col-md-2"
+          name="Zip" value="" placeholder="Enter your Zip" ng-disabled="disableForm">
+      </div>
+      <!-- <pre>{{selectedState.id }}</pre> -->
 
-    <div class="form-group row ml-4">
-      <label for="gender" class="ml-2 mr-2">
-        <input type="radio" name="gender" value="Female" ng-model="gender" ng-disabled="disableForm">
-        Female
-      </label>
-      <label for="gender" class="ml-2 mr-2">
-        <input type="radio" name="gender" value="Male" ng-model="gender" ng-disabled="disableForm">
-        Male
-      </label>
-    </div>
-    <button type="submit" class="btn btn-primary" ng-disabled="disableForm">Submit</button>
+      <div class="form-group row  mt-2">
+        <label class="control-label col-sm-2" for="email" ng-disabled="disableForm">
+          Date of Birth:
+        </label>
+        <!-- <input type="date" class="form-control col-md-6" name="dob ng-model="contact.dob" value=""
+          placeholder="Enter your date of birth" ng-disabled="disableForm"> -->
+          <input type="text" class="form-control col-md-6" uib-datepicker-popup="{{format}}" ng-model="date" />
+      </div>
 
-  </form>
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input checkbox" type="radio" name="gender"
+                value="Female" ng-disabled="disableForm" checked>
+              <label class="form-check-label">
+                Female
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input checkbox" type="radio" name="gender"
+                value="Male" ng-disabled="disableForm">
+              <label class="form-check-label">
+                Male
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input checkbox" type="radio" name="gender"
+                value="other" ng-disabled="disableForm">
+              <label class="form-check-label">
+                Other
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <hr>
+      <button type="submit" class="btn btn-primary" ng-click="resetForm()" ng-disabled="disableForm">Reset</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="disableForm">Submit</button>
+
+    </form>
+  </fieldset>
 </div>
