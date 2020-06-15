@@ -1,6 +1,20 @@
-app.controller('contactController', function($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
+app.controller('formController', function($scope, formServices) {
+
+    $scope.formData = {
+      fName :'',
+      lName : '',
+      email : ''
+    };
+
+    $scope.data = [];
   
+    $scope.submit = function (){
+      console.log("In Submit function");
+        $scope.data.push($scope.formData);
+
+        formServices.data
+    };
+ 
     console.log('Contact Controller');
     $scope.states=[
         {id: 0, name:" "},
