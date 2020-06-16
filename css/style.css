@@ -20,6 +20,18 @@
   }
 }
 
+.short-text{
+  display: none;
+}
+@media (max-width:650px){
+  .short-text{
+    display: inline-block;
+  }
+  .long-text{
+    display: none;
+  }
+}
+
 .contact_form_legend{
   border-left:6px solid #4285f4;
   background-color:lightgrey;

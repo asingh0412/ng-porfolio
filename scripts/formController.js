@@ -12,7 +12,7 @@ app.controller('formController', function($scope, formServices) {
       console.log("In Submit function");
         $scope.data.push($scope.formData);
 
-        formServices.data
+        formServices.addRecord($scope.formData);
     };
  
     console.log('Contact Controller');
